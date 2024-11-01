@@ -1,0 +1,237 @@
+@import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+.woocommerce-page {
+	// Hidden Items
+	.onsale {
+		display: none;
+	}
+
+	// Forms and Inputs
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="number"],
+	input[type="tel"],
+	select,
+	textarea {
+		@extend .form-control;
+	}
+
+	// Buttons
+	.button,
+	.submit,
+	input[type="button"],
+	input[type="submit"] {
+		@extend .btn, .btn-primary;
+	}
+
+	// Alerts & Messages
+	.woocommerce-message {
+		@extend .alert, .alert-success;
+		margin-left: 15px;
+		margin-right: 15px;
+		clear: both;
+		.button {
+			float: right;
+		}
+	}
+	.woocommerce-error {
+		@extend .alert, .alert-danger;
+		margin-left: 15px;
+		margin-right: 15px;
+		list-style-type: none;
+		clear: both;
+	}
+
+	// Breadcrumb
+	.woocommerce-breadcrumb {
+		@extend .breadcrumb;
+	}
+
+	// Tables
+	table {
+		@extend .table;
+	}
+
+	// Review Stars
+	.stars {
+		a {
+			@extend .glyphicon, .glyphicon-star;
+			margin-right: 5px;
+		}
+	}
+
+	// Sidebar
+	#sidebar {
+		@extend .col-sm-3, .col-sm-pull-9;
+		ul {
+			padding: 0;
+			list-style-type: none;
+		}
+	}
+
+	// Cart
+	&.woocommerce-cart {
+		.woocommerce {
+			@extend .row;
+			form {
+				@extend .col-xs-12;
+				.actions {
+					.coupon {
+						@extend .col-sm-6;
+					}
+				}
+			}
+			.cart-collaterals {
+				@extend .col-sm-4, .col-sm-push-8;
+			}
+		}
+	}
+
+	// Checkout
+	.col2-set {
+		@extend .row;
+		.col-1,
+		.col-2 {
+			@extend .col-sm-6;
+		}
+	}
+	.woocommerce-checkout-review-order {
+
+		.shop_table,
+		#payment {
+			@extend .col-sm-6;
+			.payment_methods {
+				list-style-type: none;
+				padding: 0;
+			}
+		}
+	}
+
+	#container {
+		@extend .col-sm-9, .col-sm-push-3;
+		#content {
+			@extend .row;
+			.page-title {
+				@extend .col-sm-12;
+			}
+
+			.woocommerce-ordering {
+				margin-bottom: 15px;
+			}
+
+			// Single Product View
+			div.product {
+				// First Section of Single Product
+				.entry-summary {
+					@extend .col-sm-6;
+					.product_title {
+						margin-top: 0;
+					}
+				}
+				.images {
+					@extend .col-sm-6;
+					// Needs fixing and all thumbnail column widths added.
+					.thumbnails {
+						@extend .row;
+						margin-right: -3px;
+						margin-left: -3px;
+						&.columns-3 {
+							a {
+								@extend .col-xs-3;
+								margin-top: 6px;
+								padding-left: 3px;
+								padding-right: 3px;
+								img {
+									@extend .img-responsive;
+									&:after {
+										content: " ";
+										clear: both;
+									}
+								}
+							}
+						}
+					}
+
+				}
+
+				// Second Section of Single Product
+				.woocommerce-tabs {
+					@extend .col-xs-12;
+					margin-top: 15px;
+					.wc-tabs {
+						@extend .nav, .nav-tabs;
+						list-style-type: none; // Removes Bullets
+						padding: 0; // Removes default bootstrap padding on lists
+						li {
+							display: inline-block; // Display as tabbed
+						}
+					}
+					.panel {
+						@extend .tab-content;
+					}
+				}
+
+				.related {
+					@extend .col-xs-12;
+					.products {
+						@extend .row;
+					}
+				}
+			}
+
+
+			// Archive Product List
+			ul.products {
+				padding: 0; // Removes default bootstrap padding on lists
+				list-style-type: none; // Removes Bullets
+				li.product {
+					@extend .col-xs-12, .col-sm-6, .col-md-3; // Product List Column Width
+					margin-bottom: 20px;
+					img {
+						@extend .img-responsive; // Make Images Responsive
+					}
+					.button {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	.woocommerce-billing-fields {
+		.form-row-first {
+			width: 48%;
+			float: left;
+		}
+		.form-row-last {
+			width: 48%;
+			float: right;
+		}
+	}
+
+	.clear {
+		@extend .clearfix;
+	}
+
+	.create-account {
+		.input-checkbox {
+			float: left;
+		}
+		.checkbox {
+			float:left;
+			margin-top: 0;
+			margin-left: 10px;
+			clear: right;
+		}
+	}
+	// Swap the sidebar on single view
+	&.sidebar-swap {
+		#sidebar {
+			@extend .col-sm-pull-0;
+		}
+		#container {
+			@extend .col-sm-push-0;
+		}
+	}
+}
